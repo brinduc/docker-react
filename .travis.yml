@@ -9,14 +9,14 @@ before_install:
 script:
   - docker run -e CI=true brinduc/docker-react npm run test
 
-  deploy:
-    provider: elasticbeanstalk
-    region: "us-west-2"
-    app: "docker-react"
-    env: "Dockerreact-env"
-    bucket_name: "elasticbeanstalk-us-west-2-028058238784"
-    bucket_path: "docker-react"
-    on:
-      branch: master
-    asccess_key_id: $AWS_ACCCESS_KEY
-    secret_access_key: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-us-west-2-028058238784"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  asccess_key_id: $AWS_ACCCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
